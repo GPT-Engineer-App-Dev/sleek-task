@@ -39,9 +39,9 @@ const Index = () => {
     setTasks(updatedTasks);
   };
 
-  const bg = useColorModeValue("gray.900", "gray.900");
-  const color = useColorModeValue("gray.100", "gray.100");
-  const borderColor = useColorModeValue("gray.600", "gray.600");
+  const bg = useColorModeValue("gray.800", "gray.800");
+  const color = useColorModeValue("white", "white");
+  const borderColor = useColorModeValue("gray.700", "gray.700");
 
   return (
     <Container maxW="container.md" p={4} bg={bg} color={color} borderRadius="md" boxShadow="lg">
