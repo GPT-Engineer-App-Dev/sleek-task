@@ -39,12 +39,12 @@ const Index = () => {
     setTasks(updatedTasks);
   };
 
-  const bg = useColorModeValue("gray.800", "gray.800");
-  const color = useColorModeValue("white", "white");
-  const borderColor = useColorModeValue("gray.700", "gray.700");
+  const bg = useColorModeValue("gray.900", "gray.900");
+  const color = useColorModeValue("gray.100", "gray.100");
+  const borderColor = useColorModeValue("gray.600", "gray.600");
 
   return (
-    <Container maxW="container.md" p={4} bg={bg} color={color}>
+    <Container maxW="container.md" p={4} bg={bg} color={color} borderRadius="md" boxShadow="lg">
       <Flex justify="center" mb={6}>
         <Heading as="h1" size="xl">
           Todo App
@@ -57,9 +57,9 @@ const Index = () => {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             mr={2}
-            bg={bg}
-            color={color}
-            borderColor={borderColor}
+            bg="gray.700"
+            color="gray.100"
+            borderColor="gray.600"
           />
           <Button onClick={addTask} colorScheme="teal">
             Add Task
@@ -72,7 +72,7 @@ const Index = () => {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p={2}
+              p={3}
               borderBottom="1px"
               borderColor={borderColor}
             >
