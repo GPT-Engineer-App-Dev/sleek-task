@@ -12,6 +12,7 @@ import {
   Text,
   VStack,
   Checkbox,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
 
@@ -38,8 +39,12 @@ const Index = () => {
     setTasks(updatedTasks);
   };
 
+  const bg = useColorModeValue("gray.800", "gray.800");
+  const color = useColorModeValue("white", "white");
+  const borderColor = useColorModeValue("gray.700", "gray.700");
+
   return (
-    <Container maxW="container.md" p={4}>
+    <Container maxW="container.md" p={4} bg={bg} color={color}>
       <Flex justify="center" mb={6}>
         <Heading as="h1" size="xl">
           Todo App
@@ -52,6 +57,9 @@ const Index = () => {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             mr={2}
+            bg={bg}
+            color={color}
+            borderColor={borderColor}
           />
           <Button onClick={addTask} colorScheme="teal">
             Add Task
@@ -66,12 +74,13 @@ const Index = () => {
               justifyContent="space-between"
               p={2}
               borderBottom="1px"
-              borderColor="gray.200"
+              borderColor={borderColor}
             >
               <Checkbox
                 isChecked={task.completed}
                 onChange={() => toggleTaskCompletion(index)}
                 mr={2}
+                colorScheme="teal"
               >
                 <Text as={task.completed ? "s" : ""}>{task.text}</Text>
               </Checkbox>
